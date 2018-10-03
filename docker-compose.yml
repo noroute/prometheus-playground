@@ -1,0 +1,10 @@
+version: '2'
+services:
+  prometheus:
+    image: prom/prometheus:v2.3.2
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+  node-exporter:
+    image: prom/node-exporter:v0.16.0
