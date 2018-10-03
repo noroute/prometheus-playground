@@ -8,3 +8,6 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
   node-exporter:
     image: prom/node-exporter:v0.16.0
+    command: ["--collector.textfile.directory", "/etc/node-exporter/textfile"]
+    volumes:
+      - ./textfile:/etc/node-exporter/textfile:ro
